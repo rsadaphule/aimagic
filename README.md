@@ -15,14 +15,15 @@ npm run dev
 # Git Repo Set up
 
 echo "# aimagic" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/rsadaphule/aimagic.git
-git push -u origin main
 
-### Deploying React App on Github Web Pages
+- git init
+- git add README.md
+- git commit -m "first commit"
+- git branch -M main
+- git remote add origin https://github.com/rsadaphule/aimagic.git
+- git push -u origin main
+
+## Deploying React App on Github Web Pages
 
 Just follow these simple steps:
 
