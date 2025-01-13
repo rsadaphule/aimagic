@@ -1,5 +1,51 @@
 # React + TypeScript + Vite
 
+### First Time Set up
+
+To create a boilerplate react with typescript run following command
+
+npm create vite@latest react-ts-basics --template react-ts
+Then run following to install all packages
+
+npm install
+Then rin following code to launch the app
+
+npm run dev
+
+# Git Repo Set up
+
+echo "# aimagic" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/rsadaphule/aimagic.git
+git push -u origin main
+
+### Deploying React App on Github Web Pages
+
+Just follow these simple steps:
+
+Install the gh-pages package (ctrl+~ to open the terminal in VS Code)
+
+npm install gh-pages
+In the package.json file add these lines before "build": "vite build",
+
+"predeploy": "npm run build",
+"deploy": "gh-pages -d dist",
+In the vite.config.js file add this line before plugins: [react()],
+
+base: "/YOUR_REPOSITORY_NAME",
+Change YOUR_REPOSITORY_NAME to the name of your GitHub repository.
+In terminal type
+
+npm run deploy
+🎉 You now have a gh-pages branch in your repository and your app is deployed (you can check it under Settings -> Pages )
+
+view your site at https://rsadaphule.github.io/
+
+P.S. To update your app deployment, just run the npm run deploy command again.
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
@@ -18,11 +64,11 @@ export default tseslint.config({
   languageOptions: {
     // other options...
     parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      project: ["./tsconfig.node.json", "./tsconfig.app.json"],
       tsconfigRootDir: import.meta.dirname,
     },
   },
-})
+});
 ```
 
 - Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
@@ -31,11 +77,11 @@ export default tseslint.config({
 
 ```js
 // eslint.config.js
-import react from 'eslint-plugin-react'
+import react from "eslint-plugin-react";
 
 export default tseslint.config({
   // Set the react version
-  settings: { react: { version: '18.3' } },
+  settings: { react: { version: "18.3" } },
   plugins: {
     // Add the react plugin
     react,
@@ -44,8 +90,9 @@ export default tseslint.config({
     // other rules...
     // Enable its recommended rules
     ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
+    ...react.configs["jsx-runtime"].rules,
   },
-})
+});
 ```
+
 # aimagic
