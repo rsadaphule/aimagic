@@ -40,14 +40,17 @@ base: "/YOUR_REPOSITORY_NAME",
 Change YOUR_REPOSITORY_NAME to the name of your GitHub repository.
 In terminal type
 
-npm run deploy
-🎉 You now have a gh-pages branch in your repository and your app is deployed (you can check it under Settings -> Pages )
-
-view your site at https://rsadaphule.github.io/
+- npm run deploy
+  🎉 You now have a gh-pages branch in your repository and your app is deployed (you can check it under Settings -> Pages )
+- view your site at https://rsadaphule.github.io/aimagic
 
 P.S. To update your app deployment, just run the npm run deploy command again.
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
+#### Adding Matrial-UI support
+
+- installation: https://mui.com/material-ui/getting-started/installation/
 
 Currently, two official plugins are available:
 

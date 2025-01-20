@@ -1,37 +1,51 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import Button from "@mui/material/Button";
+import AIMagicMenu from "./components/AIMagicMenu";
+import TextField from "@mui/material/TextField";
+import { useState } from "react";
+import { Box } from "@mui/material";
+import LLMProvider from "./components/LLMProvider";
+import APIKeyProvider from "./components/APIKeyProvider";
+import Grid from "@mui/material/Grid2";
+import Paper from "@mui/material/Paper";
+import { styled } from "@mui/material/styles";
+import MyImageList from "./components/MyImageList";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <Button
-          variant="contained"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          count is {count}
-        </Button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Box>
+        <AIMagicMenu />
+        <MyImageList />
+        <Grid container rowSpacing={2} columnSpacing={1}>
+          <Grid size={12}>
+            <LLMProvider />
+          </Grid>
+          <Grid size={12}>
+            <APIKeyProvider />
+          </Grid>
+          <Grid size={10}>
+            <TextField
+              id="image"
+              label="image"
+              variant="outlined"
+              size="small"
+              color="secondary"
+              fullWidth
+            />
+          </Grid>
+          <Grid size={2}>
+            <Button
+              variant="contained"
+              color="primary"
+              size="small"
+              sx={{ height: "38px" }}
+            >
+              Browse
+            </Button>
+          </Grid>
+        </Grid>
+      </Box>
     </>
   );
 }
