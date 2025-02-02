@@ -19,7 +19,7 @@ export default function MyImageList() {
       sx={{ width: 500, height: 450 }}
       variant="quilted"
       cols={4}
-      rowheight={121}
+      rowHeight={121}
     >
       {itemData.map((item) => (
         <ImageListItem

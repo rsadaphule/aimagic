@@ -1,23 +1,34 @@
-import "./App.css";
+//import "./App.css";
 import Button from "@mui/material/Button";
 import AIMagicMenu from "./components/AIMagicMenu";
 import TextField from "@mui/material/TextField";
-import { useState } from "react";
-import { Box } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import LLMProvider from "./components/LLMProvider";
 import APIKeyProvider from "./components/APIKeyProvider";
 import Grid from "@mui/material/Grid2";
-import Paper from "@mui/material/Paper";
-import { styled } from "@mui/material/styles";
 import MyImageList from "./components/MyImageList";
+import { Sidebar } from "./components/Sidebar";
+import { Feed } from "./components/Feed";
+import { Rightbar } from "./components/Rightbar";
 
 function App() {
   return (
     <>
       <Box>
         <AIMagicMenu />
-        <MyImageList />
-        <Grid container rowSpacing={2} columnSpacing={1}>
+        {/*<MyImageList /> */}
+        <Stack
+          direction="row"
+          spacing={{ xs: 0, sm: 2, xl: 2 }}
+          justifyContent="space-between"
+        >
+          <Sidebar />
+          <Feed />
+          <Rightbar />
+        </Stack>
+
+        {/*
+         <Grid container rowSpacing={2} columnSpacing={1} mt={10}>
           <Grid size={12}>
             <LLMProvider />
           </Grid>
@@ -45,6 +56,7 @@ function App() {
             </Button>
           </Grid>
         </Grid>
+      */}
       </Box>
     </>
   );
