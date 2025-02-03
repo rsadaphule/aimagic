@@ -2,37 +2,18 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import IconButton from "@mui/material/IconButton";
 import PsychologyIcon from "@mui/icons-material/Psychology";
 import Avatar from "@mui/material/Avatar";
-import {
-  Stack,
-  Button,
-  Menu,
-  MenuItem,
-  styled,
-  InputBase,
-} from "@mui/material";
+import { Stack, styled, InputBase } from "@mui/material";
 
 import Badge from "@mui/material/Badge";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
-
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
 import { useState } from "react";
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 
 export default function AIMagicMenu() {
-  const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
-  const open = Boolean(anchorEl);
-
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
   const StyledToolBar = styled(Toolbar)({
     display: "flex",
     justifyContent: "space-between",
@@ -62,6 +43,16 @@ export default function AIMagicMenu() {
       display: "none",
     },
   }));
+
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = (event: React.MouseEvent<HTMLElement>) => {
+    setOpen(true);
+  };
+
+  const handleClose = (event: React.MouseEvent<HTMLElement>) => {
+    setOpen(false);
+  };
 
   return (
     <AppBar position="sticky">
@@ -94,9 +85,10 @@ export default function AIMagicMenu() {
             alt="Ravindra Sadaphule"
             sx={{ width: 30, height: 30 }}
             src="https://rsadaphule.github.io/assets/images/self_passport_photo.jpeg"
+            onClick={handleOpen}
           />
         </Icons>
-        <UserBox>
+        <UserBox onClick={handleOpen}>
           <Avatar
             alt="Ravindra Sadaphule"
             sx={{ width: 30, height: 30 }}
@@ -105,6 +97,24 @@ export default function AIMagicMenu() {
           <Typography variant="caption">Ravindra</Typography>
         </UserBox>
       </StyledToolBar>
+      <Menu
+        id="demo-positioned-menu"
+        aria-labelledby="demo-positioned-button"
+        open={open}
+        onClose={handleClose}
+        anchorOrigin={{
+          vertical: "top",
+          horizontal: "right",
+        }}
+        transformOrigin={{
+          vertical: "top",
+          horizontal: "right",
+        }}
+      >
+        <MenuItem>Profile</MenuItem>
+        <MenuItem>My account</MenuItem>
+        <MenuItem>Logout</MenuItem>
+      </Menu>
     </AppBar>
   );
 }
