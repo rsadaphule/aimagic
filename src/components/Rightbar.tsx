@@ -1,4 +1,3 @@
-import * as React from "react";
 import { Box } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Avatar from "@mui/material/Avatar";
@@ -132,7 +131,7 @@ export const Rightbar = () => {
             <ListItemText
               primary="Brunch this weekend?"
               secondary={
-                <React.Fragment>
+                <>
                   <Typography
                     component="span"
                     variant="body2"
@@ -141,7 +140,7 @@ export const Rightbar = () => {
                     Ali Connors
                   </Typography>
                   {" — I'll be in your neighborhood doing errands this…"}
-                </React.Fragment>
+                </>
               }
             />
           </ListItem>
@@ -156,7 +155,7 @@ export const Rightbar = () => {
             <ListItemText
               primary="Summer BBQ"
               secondary={
-                <React.Fragment>
+                <>
                   <Typography
                     component="span"
                     variant="body2"
@@ -165,7 +164,7 @@ export const Rightbar = () => {
                     to Scott, Alex, Jennifer
                   </Typography>
                   {" — Wish I could come, but I'm out of town this…"}
-                </React.Fragment>
+                </>
               }
             />
           </ListItem>
@@ -180,7 +179,7 @@ export const Rightbar = () => {
             <ListItemText
               primary="Oui Oui"
               secondary={
-                <React.Fragment>
+                <>
                   <Typography
                     component="span"
                     variant="body2"
@@ -189,7 +188,7 @@ export const Rightbar = () => {
                     Sandra Adams
                   </Typography>
                   {" — Do you have Paris recommendations? Have you ever…"}
-                </React.Fragment>
+                </>
               }
             />
           </ListItem>

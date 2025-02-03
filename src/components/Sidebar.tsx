@@ -10,13 +10,12 @@ import HomeIcon from "@mui/icons-material/Home";
 import SettingsIcon from "@mui/icons-material/Settings";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import PagesIcon from "@mui/icons-material/Pages";
-import GroupIcon from "@mui/icons-material/Group";
 import { Group } from "@mui/icons-material";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import Diversity3Icon from "@mui/icons-material/Diversity3";
 import ModeNightIcon from "@mui/icons-material/ModeNight";
 import Switch from "@mui/material/Switch";
-import { createTheme, ThemeProvider, PaletteMode } from "@mui/material/styles";
+import { PaletteMode } from "@mui/material/styles";
 
 interface SideBarProps {
   mode: PaletteMode;

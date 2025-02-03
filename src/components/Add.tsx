@@ -1,6 +1,4 @@
-import React, { useState } from "react";
-import DeleteIcon from "@mui/icons-material/Delete";
-import IconButton from "@mui/material/IconButton";
+import { useState } from "react";
 import AddIcon from "@mui/icons-material/Add";
 import Tooltip from "@mui/material/Tooltip";
 import Fab from "@mui/material/Fab";
@@ -8,7 +6,6 @@ import Modal from "@mui/material/Modal";
 import { Box, styled, Typography, Stack } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
 import TextField from "@mui/material/TextField";
-import EmojiEmotionsIcon from "@mui/icons-material/EmojiEmotions";
 import { EmojiEmotions } from "@mui/icons-material";
 import ImageIcon from "@mui/icons-material/Image";
 import VideoCameraBackIcon from "@mui/icons-material/VideoCameraBack";
@@ -17,7 +14,7 @@ import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import DateRangeIcon from "@mui/icons-material/DateRange";
 
-const UserBox = styled(Box)(({ theme }) => ({
+const UserBox = styled(Box)(({}) => ({
   alignItems: "center",
   gap: "10px",
   display: "flex",
@@ -33,11 +30,11 @@ const StyledModal = styled(Modal)({
 export const Add = () => {
   const [open, setOpen] = useState(false);
 
-  const handleOpen = (event: React.MouseEvent<HTMLElement>) => {
+  const handleOpen = () => {
     setOpen(true);
   };
 
-  const handleClose = (event: React.MouseEvent<HTMLElement>) => {
+  const handleClose = () => {
     setOpen(false);
   };
 

@@ -46,11 +46,11 @@ export default function AIMagicMenu() {
 
   const [open, setOpen] = useState(false);
 
-  const handleOpen = (event: React.MouseEvent<HTMLElement>) => {
+  const handleOpen = () => {
     setOpen(true);
   };
 
-  const handleClose = (event: React.MouseEvent<HTMLElement>) => {
+  const handleClose = () => {
     setOpen(false);
   };
 
